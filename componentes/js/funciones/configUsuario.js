@@ -26,4 +26,16 @@ export const configUsuario = () => {
         cargaCarrito();
         estadoTotal(carritoItems);
     }
+    if(!data){
+        let contenedor = document.querySelector('#contenedor_carrito');
+        if(carritoItems.length === 0){
+            return contenedor.innerHTML= `
+            <div class="carrito_vacio">
+            <img src="componentes/images/empty-cart.png" alt="empty cart">
+            <h2>Your cart is empty</h2>
+            <p>You can add items to your cart by clicking on the "<i class="bx bx-plus"></i>" button on the product page.</p>
+            </div>
+            `;
+        }
+    }
 }
